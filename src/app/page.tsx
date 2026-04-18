@@ -9,6 +9,7 @@ import ExperienceSection from "@/components/Experience";
 import Hero from "@/components/Hero";
 import Service from "@/components/Service";
 import Tech from "@/components/Tech";
+import Project from "@/components/Project";
 
 const containerVariants: Variants = {
   hidden: {},
@@ -67,26 +68,44 @@ export default function Home() {
       variants={containerVariants}
       initial={false}
       animate={controls}
-      className="pt-20"
     >
-      <motion.section variants={sectionVariants}>
-        <Hero />
+      <motion.section variants={sectionVariants} className="py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <Hero />
+        </div>
       </motion.section>
 
-      <motion.section variants={sectionVariants}>
-        <Service />
+      <motion.section variants={sectionVariants} className="bg-muted/40 py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <Service />
+        </div>
       </motion.section>
 
-      <motion.section variants={sectionVariants}>
-        <Tech />
+      <motion.section variants={sectionVariants} className="py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <Tech />
+        </div>
       </motion.section>
 
-      <motion.section variants={sectionVariants}>
-        <ExperienceSection />
+      <motion.section
+        variants={sectionVariants}
+        className="bg-gradient-to-b from-muted/30 to-background py-16"
+      >
+        <div className="mx-auto max-w-6xl px-4">
+          <Project />
+        </div>
       </motion.section>
 
-      <motion.section variants={sectionVariants}>
-        <Contact />
+      <motion.section variants={sectionVariants} className="bg-muted/40 py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <ExperienceSection />
+        </div>
+      </motion.section>
+
+      <motion.section variants={sectionVariants} className="py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <Contact />
+        </div>
       </motion.section>
     </motion.main>
   );

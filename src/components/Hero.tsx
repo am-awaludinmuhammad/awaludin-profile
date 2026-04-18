@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { playfair } from "@/app/layout";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -16,21 +17,23 @@ export default function Hero() {
         <div className="space-y-2">
           {/* Role */}
           <h2 className="text-lg sm:text-xl text-muted-foreground">
-            Software Engineer
+            Full-stack Web Developer
           </h2>
 
           {/* Subtitle */}
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mx-auto">
-            I build web applications focusing on clean, scalable, and maintainable solutions.
+            I build web applications that solve real business problems, delivering scalable solutions that improve efficiency, performance, and growth.
           </p>
         </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4">
-          {/* <Button size="lg" className="px-6">
-            Experiences
-          </Button> */}
-          <Button size="lg" className="px-6">
+          <Link href="#contact">
+            <Button size="lg" className="px-6">
+              Contact Me
+            </Button>
+          </Link>
+          <Button variant="outline" size="lg" className="px-6">
             Download Resume
           </Button>
         </div>

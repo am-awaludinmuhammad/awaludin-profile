@@ -23,16 +23,13 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} h-full antialiased`}
     >
+      <title>Portfolio | Awaludin</title>
       <body className="min-h-full flex flex-col font-sans">
-        
-        {/* HEADER */}
         <Navbar />
 
-        {/* CONTENT */}
-        <main className="flex-1 max-w-6xl mx-auto w-full px-4 py-6">
+        <main className="flex-1 w-full pt-6">
           {children}
         </main>
-
       </body>
     </html>
   );

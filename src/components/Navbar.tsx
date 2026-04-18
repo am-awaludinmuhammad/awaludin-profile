@@ -34,7 +34,7 @@ const Navbar = () => {
           {/* Mobile: centered brand */}
           <div className="absolute left-1/2 -translate-x-1/2 md:hidden">
             <Link href="/" className="font-semibold text-lg tracking-tight">
-              Awaludin
+              M.A
             </Link>
           </div>
 
@@ -46,7 +46,7 @@ const Navbar = () => {
             href="/"
             className="hidden font-semibold text-lg tracking-tight md:block"
           >
-            Awaludin
+            M.A
           </Link>
 
           {/* Desktop: center nav */}
