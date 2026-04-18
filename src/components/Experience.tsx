@@ -1,5 +1,7 @@
 "use client";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 
 type Experience = {
   company: string;
@@ -149,80 +151,123 @@ const experiences: Experience[] = [
 ];
 
 
+
+type ExperienceCardProps = {
+  exp: Experience;
+  index: number;
+};
+
+function ExperienceCard({ exp, index }: ExperienceCardProps) {
+  const [expanded, setExpanded] = useState(false);
+
+  const previewHighlights = exp.highlights.slice(0, 2);
+  const hiddenHighlights = exp.highlights.slice(2);
+  const hasMoreHighlights = exp.highlights.length > 2;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: index * 0.05 }}
+      viewport={{ once: true }}
+      className="rounded-xl border p-5 transition hover:shadow-sm"
+    >
+      <div className="flex flex-col gap-2 sm:flex-row sm:justify-between">
+        <div>
+          <h3 className="text-base font-semibold">{exp.role}</h3>
+          <p className="text-sm">
+            {exp.company} • {exp.type}
+          </p>
+          <p className="text-sm text-muted-foreground">{exp.location}</p>
+        </div>
+
+        <span className="text-xs text-muted-foreground">
+          {exp.startDate} - {exp.endDate}
+        </span>
+      </div>
+
+      <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
+        {previewHighlights.map((item, idx) => (
+          <li key={idx} className="flex items-start gap-2">
+            <span className="mt-1 text-xs">•</span>
+            <p>{item}</p>
+          </li>
+        ))}
+
+        <AnimatePresence initial={false}>
+          {expanded &&
+            hiddenHighlights.map((item, idx) => (
+              <motion.li
+                key={`hidden-${idx}`}
+                initial={{ opacity: 0, height: 0, y: -4 }}
+                animate={{ opacity: 1, height: "auto", y: 0 }}
+                exit={{ opacity: 0, height: 0, y: -4 }}
+                transition={{ duration: 0.2 }}
+                className="flex items-start gap-2 overflow-hidden"
+              >
+                <span className="mt-1 text-xs">•</span>
+                <p>{item}</p>
+              </motion.li>
+            ))}
+        </AnimatePresence>
+      </ul>
+
+      {hasMoreHighlights && (
+        <button
+          type="button"
+          onClick={() => setExpanded((prev) => !prev)}
+          className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-foreground transition hover:opacity-70"
+        >
+          {expanded ? "Show less" : `Show ${hiddenHighlights.length} more`}
+          <ChevronDown
+            className={`h-4 w-4 transition-transform ${
+              expanded ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+      )}
+
+      <div className="mt-4 flex flex-wrap gap-2">
+        {exp.techStack.map((tech) => (
+          <span
+            key={tech}
+            className="
+              text-xs font-medium
+              px-3 py-1.5
+              rounded-xl
+              bg-gray-100 text-primary
+              border border-primary/20
+              hover:bg-primary/20
+              transition
+            "
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
 export default function ExperienceSection() {
   return (
-    <section className="py-20 px-4" id="experience">
-      <div className="max-w-4xl mx-auto">
-
-        {/* Heading */}
-        <div className="text-center mb-14">
-          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+    <section className="px-4 py-20" id="experience">
+      <div className="mx-auto max-w-4xl">
+        <div className="mb-14 text-center">
+          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
             Experience
           </h2>
-          <p className="text-sm text-muted-foreground mt-2">
+          <p className="mt-2 text-sm text-muted-foreground">
             Professional journey & selected work
           </p>
         </div>
 
-        {/* List */}
         <div className="space-y-8">
           {experiences.map((exp, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3, delay: i * 0.05 }}
-              viewport={{ once: true }}
-              className="border rounded-xl p-5 hover:shadow-sm transition"
-            >
-
-              {/* Top */}
-              <div className="flex flex-col sm:flex-row sm:justify-between gap-2">
-                <div>
-                  <h3 className="text-base font-semibold">
-                    {exp.role}
-                  </h3>
-                  <p className="text-sm">
-                    {exp.company} • {exp.type}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {exp.location}
-                  </p>
-                </div>
-
-                <span className="text-xs text-muted-foreground">
-                  {exp.startDate} - {exp.endDate}
-                </span>
-              </div>
-
-              {/* Highlights */}
-              <ul className="mt-4 space-y-2 text-sm text-muted-foreground text-justify">
-                {exp.highlights.map((item, idx) => (
-                  <li key={idx} className="flex gap-2">
-                    <span>•</span>
-                    <p>{item}</p>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Tech */}
-              <div className="flex flex-wrap gap-2 mt-4">
-                {exp.techStack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-xs px-2.5 py-1 rounded-md bg-muted text-muted-foreground"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-            </motion.div>
+            <ExperienceCard key={i} exp={exp} index={i} />
           ))}
         </div>
-
       </div>
     </section>
   );
 }
-
