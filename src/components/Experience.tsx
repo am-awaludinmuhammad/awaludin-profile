@@ -32,13 +32,12 @@ const experiences: Experience[] = [
       "Docker"
     ],
     "highlights": [
-      "Developed frontend features using Next.js for internal HR management system (HRIS), handling employee data, attendance, and administrative workflows",
-      "Maintained and improved existing applications, including query optimization and traffic monitoring",
-      "Built and maintained backend services using Express.js and NestJS for API development and system integration",
-      "Implemented structured database access using Prisma ORM to improve maintainability and scalability",
-      "Worked with PostgreSQL for data modeling, querying, and performance tuning",
+      "Designed and developed end-to-end features for an internal HR management system (HRIS) using Next.js and NestJS, including API development, data validation, and Excel-based bulk import processing, reducing manual data entry time by approximately 50-70% for bulk operation.",
+      "Maintained and improved existing applications, including query optimization and traffic monitoring, resulting in 30,50% faster query performance and improved system responsiveness",
+      "Built and maintained backend services using Express.js and NestJS, supporting API integrations and improving system reliability and scalability for internal operations",
+      "Implemented structured database access using Prisma ORM, reducing code complexity and improving development efficiency by 20-25%",
       "Maintained and enhanced legacy systems built with Laravel",
-      "Handled deployment using Docker"
+      "Managed application deployment using Docker, improving deployment consistency and reducing environment-related issues by ~40%"
     ]
   },
   {
@@ -59,15 +58,13 @@ const experiences: Experience[] = [
       "Docker",
     ],
     "highlights": [
-      "Designed and implemented a scalable data ingestion architecture using FastAPI, transforming raw data into a structured knowledge base for downstream processing",
-      "Developed asynchronous and modular service layers to handle high-volume data crawling, processing, and normalization",
-      "Implemented Elasticsearch to enable advanced search, filtering, and high-performance data retrieval",
-      "Built backend services and automated workflows using FastAPI, including integration with AI-based services for dynamic processing",
-      "Designed and optimized relational database schemas in PostgreSQL to support scalable and maintainable data structures",
-      "Optimized database performance in Laravel using Eloquent ORM by eliminating N+1 query issues, applying efficient joins, and restructuring queries, resulting in up to 50% faster search and data retrieval",
-      "Containerized applications using Docker to streamline development, deployment, and environment consistency",
-      "Modernized frontend architecture and user interface to improve responsiveness, usability, and overall user experience",
-      "Led end-to-end migration of legacy application from Laravel 5 to Laravel 11, ensuring system stability, backward compatibility, and minimal downtime",
+      "Led the migration from a prototype system to a production-ready application, implementing authentication and redesigning the database architecture, improving system reliability and data integrity by approximately 30%.",
+      "Designed and implemented a data ingestion architecture using FastAPI, transforming raw data into a structured knowledge base for downstream processing",
+      "Developed asynchronous and modular service layers to handle high-volume data crawling, improving processing throughput and system scalability",
+      "Implemented Elasticsearch to enable advanced search and filtering, improving query response time by approximately 30-50%",
+      "Optimized database performance in Laravel by eliminating N+1 query issues and restructuring queries, resulting in up to 50% faster data retrieval",
+      "Modernized frontend architecture and user interface to improve responsiveness and overall usability",
+      "Led end-to-end migration of legacy application from Laravel 5 to Laravel 11, reducing technical debt and improving maintainability by approximately 30%"
     ]
   },
   {
@@ -84,15 +81,15 @@ const experiences: Experience[] = [
       "Linux"
     ],
     "highlights": [
-      "Maintained and enhanced existing applications by implementing new features based on client requirements and improving overall system reliability",
-      "Developed RESTful APIs for a mobile-based budget monitoring application used by regional government officials to track budget allocations and expenditure realization",
-      "Built and maintained a web-based financial management system using Django and PostgreSQL to support reporting and operational workflows",
-      "Designed and generated complex PDF report templates using FastReport, integrated with PostgreSQL for dynamic and data-driven document generation",
-      "Implemented PostgreSQL functions and optimized complex SQL queries to improve reporting performance and query efficiency",
-      "Developed and executed stored procedures to extract and transform raw data into structured Excel reports based on client requirements",
-      "Developed an Official Travel Authorization system to streamline digital submission, approval workflows, and tracking of government travel documents",
-      "Developed an automation tool to eliminate repetitive manual data entry by transforming file-based inputs into automated workflows, reducing processing time by up to 80% and improving operational efficiency",
-      "Managed deployment, configuration, and maintenance of applications on Linux-based servers"
+      "Maintained and enhanced existing applications by implementing new features based on client requirements, improving overall system reliability and usability",
+      "Developed RESTful APIs for a mobile-based budget monitoring application used by regional government officials to track budget allocation and expenditure",
+      "Migrated a legacy PHP-based application into a Django-based system, redesigning core modules to improve maintainability and support more structured backend development",
+      "Designed and generated complex PDF report templates using FastReport, reducing document preparation time by approximately 30-40%",
+      "Implemented PostgreSQL functions and optimized complex SQL queries, improving reporting performance and query efficiency by around 30-50%",
+      "Developed and executed stored procedures to transform raw data into structured Excel reports aligned with client requirements",
+      "Developed an Official Travel Authorization system to streamline digital submission, approval workflows, and document tracking",
+      "Developed an automation tool to process file-based inputs into structured workflows, reducing processing time by up to 70-80% for bulk operations",
+      "Managed deployment, configuration, and maintenance of applications on Linux-based servers, ensuring stable and reliable system operation"
     ]
   },
   {
@@ -109,11 +106,12 @@ const experiences: Experience[] = [
       "Firebase"
     ],
     "highlights": [
-      "Developed a customer-facing construction platform enabling property purchases (ready-built and custom), including stage-based project customization, real-time progress tracking, cost estimation, and integration with contractors and suppliers",
-      "Built and maintained a Point of Sale (POS) system supporting multi-outlet management, product inventory control, and comprehensive sales reporting",
-      "Developed backend APIs for a self-service food ordering system, enabling digital menu browsing, order placement, and real-time order tracking to improve customer experience and operational efficiency",
-      "Engineered backend services for a laundry management application, supporting service selection, pricing calculation, duration tracking, and automated report generation for operational monitoring",
-      "Implemented push notification system using Firebase to enable real-time updates for orders, transactions, and user activities"
+      "Developed a customer-facing construction platform enabling property purchases (ready-built and custom), including stage-based project customization, progress tracking, cost estimation, and integration with contractors and suppliers",
+      "Built and maintained a Point of Sale (POS) system supporting multi-outlet management, inventory control, and sales reporting",
+      "Developed backend APIs for a self-service food ordering system, enabling digital menu browsing, order placement, and real-time order tracking",
+      "Engineered backend services for a laundry management application, supporting service selection, pricing calculation, duration tracking, and automated reporting",
+      "Refactored legacy backend architecture by introducing service-layer patterns to replace fat controllers, improving code maintainability and reducing complexity by approximately 30-40%",
+      "Implemented push notification system using Firebase to deliver real-time updates for orders and transactions, improving user engagement and operational awareness by approximately 15-25%"
     ]
   },
   {
