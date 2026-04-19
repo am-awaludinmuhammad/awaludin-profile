@@ -33,9 +33,15 @@ export default function Hero() {
               Contact Me
             </Button>
           </Link>
-          <Button variant="outline" size="lg" className="px-6">
-            Download Resume
-          </Button>
+          <a
+            href="/resume/CV_M_Awaludin_v0426.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="outline" size="lg" className="px-6">
+              View Resume
+            </Button>
+          </a>
         </div>
 
       </div>
