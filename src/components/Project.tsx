@@ -6,6 +6,27 @@ import ProjectsModal from "./shared/project-modal";
 
 const works = [
   {
+    id: "farma",
+    type: "client",
+    title: "Pharmacy Management",
+    subtitle: "Centralized Pharmacy Management Platform",
+    year: 2024,
+    description: "<p>A pharmacy management web application built to simplify and centralize daily pharmacy operations across multiple branches.</p><p>The platform supports multi-pharmacy management, allowing owners and administrators to manage each pharmacy independently within a single system.</p><p>Users can manage product catalogs, monitor stock availability, record sales transactions, handle procurement and supplier purchases, and maintain accurate inventory movement in real time.</p><p>The system also provides operational reports such as sales summaries, stock reports, purchase history, and branch-level performance insights to support better decision-making.</p><p>This project was delivered as an MVP web application for a client in 2024, focusing on essential pharmacy workflows with a scalable foundation for future enhancements.</p>",
+    thumbnail:
+      "/projects/farma/thumbnail.png",
+    images: [
+      "/projects/farma/img1.png",
+      "/projects/farma/img2.png",
+      "/projects/farma/img3.png",
+      "/projects/farma/img4.png",
+      "/projects/farma/img5.png",
+      "/projects/farma/img6.png",
+      "/projects/farma/img7.png",
+      "/projects/farma/img8.png",
+    ],
+    techStack: ["Laravel", "PostgreSQL"],
+  },
+  {
     id: "umbah",
     type: "client",
     title: "Umbah Umbah",
@@ -51,7 +72,7 @@ const works = [
     thumbnail:
       "/projects/fintrack/thumbnail.png",
     images: [],
-    techStack: ["PostgreSQL", "Express.js", "TypeScript", "Next.js"],
+    techStack: ["PostgreSQL", "Express.js", "Next.js"],
   },
 ];
 
@@ -59,7 +80,7 @@ export default function Projects() {
   const [selected, setSelected] = useState<any | null>(null);
 
   return (
-    <section className="py-16 px-4" id="works">
+    <section className="py-16 px-4" id="projects">
       <div className="max-w-5xl mx-auto space-y-10">
 
         {/* Heading */}
@@ -71,7 +92,7 @@ export default function Projects() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {works.map((work, i) => (
             <div
               key={i}
@@ -111,7 +132,7 @@ export default function Projects() {
                 </h3>
                 {
                   work.subtitle && (
-                    <h5 className="text-xs leading-tight">
+                    <h5 className="text-[10px] leading-tight">
                       {work.subtitle}
                     </h5>
                   )
